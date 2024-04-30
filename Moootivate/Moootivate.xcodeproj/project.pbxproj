@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA820EBB87118F65421BAB5 /* Pods_Moootivate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015671E7C35020DBC0DD7F3B /* Pods_Moootivate.framework */; };
 		F69B13312BDFE5CB00EB08B2 /* MoootivateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B13302BDFE5CB00EB08B2 /* MoootivateApp.swift */; };
 		F69B13332BDFE5CB00EB08B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B13322BDFE5CB00EB08B2 /* ContentView.swift */; };
 		F69B13352BDFE5CD00EB08B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F69B13342BDFE5CD00EB08B2 /* Assets.xcassets */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		015671E7C35020DBC0DD7F3B /* Pods_Moootivate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moootivate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C495759BF47C3D6C51022F /* Pods-Moootivate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moootivate.release.xcconfig"; path = "Target Support Files/Pods-Moootivate/Pods-Moootivate.release.xcconfig"; sourceTree = "<group>"; };
+		82EC341F3CF1D9E498587FF6 /* Pods-Moootivate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moootivate.debug.xcconfig"; path = "Target Support Files/Pods-Moootivate/Pods-Moootivate.debug.xcconfig"; sourceTree = "<group>"; };
 		F69B132D2BDFE5CB00EB08B2 /* Moootivate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moootivate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F69B13302BDFE5CB00EB08B2 /* MoootivateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoootivateApp.swift; sourceTree = "<group>"; };
 		F69B13322BDFE5CB00EB08B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,17 +40,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA820EBB87118F65421BAB5 /* Pods_Moootivate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A66645B066BD860395C937A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82EC341F3CF1D9E498587FF6 /* Pods-Moootivate.debug.xcconfig */,
+				63C495759BF47C3D6C51022F /* Pods-Moootivate.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AA2F67697DF67B298D294A36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				015671E7C35020DBC0DD7F3B /* Pods_Moootivate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F69B13242BDFE5CB00EB08B2 = {
 			isa = PBXGroup;
 			children = (
 				F69B132F2BDFE5CB00EB08B2 /* Moootivate */,
 				F69B132E2BDFE5CB00EB08B2 /* Products */,
+				A66645B066BD860395C937A0 /* Pods */,
+				AA2F67697DF67B298D294A36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F69B133B2BDFE5CD00EB08B2 /* Build configuration list for PBXNativeTarget "Moootivate" */;
 			buildPhases = (
+				574DCB89FD891F0EF2B6FA00 /* [CP] Check Pods Manifest.lock */,
 				F69B13292BDFE5CB00EB08B2 /* Sources */,
 				F69B132A2BDFE5CB00EB08B2 /* Frameworks */,
 				F69B132B2BDFE5CB00EB08B2 /* Resources */,
@@ -202,6 +228,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		574DCB89FD891F0EF2B6FA00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moootivate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F69B13292BDFE5CB00EB08B2 /* Sources */ = {
@@ -342,6 +393,7 @@
 		};
 		F69B133C2BDFE5CD00EB08B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82EC341F3CF1D9E498587FF6 /* Pods-Moootivate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +423,7 @@
 		};
 		F69B133D2BDFE5CD00EB08B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63C495759BF47C3D6C51022F /* Pods-Moootivate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
